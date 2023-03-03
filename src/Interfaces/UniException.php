@@ -1,0 +1,22 @@
+<?php
+
+namespace MGGFLOW\ExceptionManager\Interfaces;
+
+interface UniException extends \Throwable
+{
+    public function addMessagePart(array $part);
+
+    public function getMessageParts(): array;
+
+    public function setLogLvl(int $lvl);
+
+    public function getLogLvl(): int;
+
+    public function setInternal(bool $flag);
+
+    public function isInternal(): bool;
+
+    public function getInternalMessage(): string;
+
+    public function fill(CodeMaker $codeMaker, MessageMaker $messageMaker);
+}

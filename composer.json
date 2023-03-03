@@ -1,10 +1,10 @@
 {
-    "name": "mggflow/sample-library",
+    "name": "mggflow/exception-manager",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "MGGFLOW\\SampleLibrary\\": "src/"
+            "MGGFLOW\\ExceptionManager\\": "src/"
         }
     },
     "authors": [
