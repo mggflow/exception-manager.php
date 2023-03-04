@@ -60,12 +60,17 @@ abstract class ExceptionBase extends \Exception implements UniException
     public function fill(CodeMaker $codeMaker, MessageMaker $messageMaker)
     {
         $this->code = $codeMaker->make($this->getMessageParts());
+        $madeMessage = $messageMaker->make($this->getMessageParts());
+
+        if(empty($madeMessage) and !empty($this->message)){
+            $madeMessage = $this->message;
+        }
 
         if ($this->isInternal()) {
+            $this->internalMessage = $madeMessage;
             $this->message = self::INTERNAL_ERROR_MESSAGE;
-            $this->internalMessage = $messageMaker->make($this->getMessageParts());
         } else {
-            $this->message = $messageMaker->make($this->getMessageParts());
+            $this->message = $madeMessage;
         }
     }
 }

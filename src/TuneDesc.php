@@ -58,6 +58,11 @@ class TuneDesc implements Interfaces\DescTuner
         $this->exception = $exception;
     }
 
+    public function getCodes(): array
+    {
+        return $this->codes;
+    }
+
     public function b(): BuildException
     {
         return $this->builder;
