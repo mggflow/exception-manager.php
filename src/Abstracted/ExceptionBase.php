@@ -8,10 +8,10 @@ use MGGFLOW\ExceptionManager\Interfaces\UniException;
 
 abstract class ExceptionBase extends \Exception implements UniException
 {
-    const LOG_LVL_FATAL = 0;
-    const LOG_LVL_ERROR = 1;
-    const LOG_LVL_WARNING = 2;
-    const LOG_LVL_INFO = 3;
+    const LOG_LVL_FATAL = 2**9;
+    const LOG_LVL_ERROR = 2**7;
+    const LOG_LVL_WARNING = 2**5;
+    const LOG_LVL_INFO = 2**3;
 
     const INTERNAL_ERROR_MESSAGE = 'Internal Error';
 
