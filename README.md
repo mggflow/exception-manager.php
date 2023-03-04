@@ -1,16 +1,50 @@
-# Sample library on PHP
-## Dependencies
-Use command to install dependencies:
+# ExceptionManager
 
-``
-composer install
-``
-
-## Licenses
-To fast choosing appropriate license you can use service:
-https://choosealicense.com/licenses/
+## About
+This package is using to create universal exceptions with codes based on exception sense.
 
 ## Usage
-1. Go to https://packagist.org/
-2. Submit repository
-3. Use ``composer require mggflow/sample-lib`` command
+To install:
+```
+composer require mggflow/exception-manager
+```
+
+Example:
+```
+try {
+    throw ManageException::build()
+        ->log()->warning()->b()
+        ->desc()->internal()->tooMany('Requests')->b()
+        ->fill();
+} catch (UniException $uniException) {
+    echo '<pre>';
+    var_dump($uniException->getCode());
+    var_dump($uniException->getMessage());
+    var_dump($uniException->getInternalMessage());
+    var_dump($uniException->getLogLvl());
+    var_dump($uniException->getMessageParts());
+    echo '</pre>';
+}
+```
+
+Expected output:
+```
+int(13)
+string(14) "Internal Error"
+string(17) "Too many Requests"
+int(32)
+array(1) {
+  [0]=>
+  array(2) {
+    [0]=>
+    int(13)
+    [1]=>
+    array(2) {
+      [0]=>
+      string(8) "too many"
+      [1]=>
+      string(8) "Requests"
+    }
+  }
+}
+```
