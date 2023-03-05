@@ -19,4 +19,8 @@ interface UniException extends \Throwable
     public function getInternalMessage(): string;
 
     public function fill(CodeMaker $codeMaker, MessageMaker $messageMaker);
+
+    public function setContext($something, string $key='default');
+
+    public function getContext(): array;
 }

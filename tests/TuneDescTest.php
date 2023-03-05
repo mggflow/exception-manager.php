@@ -56,4 +56,12 @@ class TuneDescTest extends \PHPUnit\Framework\TestCase
         self::assertEquals($unexpectedE->getMessage(), $e->getInternalMessage());
         self::assertEquals($unexpectedE->getCode(), $e->getCode());
     }
+
+    public function testContext(){
+        $context = uniqid();
+        $key = 'id';
+        $e = (new BuildException())->desc()->context($context, $key)->b()->fill();
+
+        self::assertEquals($context, $e->getContext()[$key]);
+    }
 }

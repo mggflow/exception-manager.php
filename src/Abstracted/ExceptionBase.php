@@ -15,12 +15,14 @@ abstract class ExceptionBase extends \Exception implements UniException
 
     const INTERNAL_ERROR_MESSAGE = 'Internal Error';
 
-    public int $logLvl = self::LOG_LVL_FATAL;
-    public bool $isInternal = false;
+    protected int $logLvl = self::LOG_LVL_FATAL;
+    protected bool $isInternal = false;
 
     protected array $messageParts = [];
 
     protected string $internalMessage;
+
+    protected array $context = [];
 
     public function addMessagePart(array $part)
     {
@@ -72,5 +74,15 @@ abstract class ExceptionBase extends \Exception implements UniException
         } else {
             $this->message = $madeMessage;
         }
+    }
+
+    public function setContext($something, string $key = 'default')
+    {
+        $this->context[$key] = $something;
+    }
+
+    public function getContext(): array
+    {
+        return $this->context;
     }
 }

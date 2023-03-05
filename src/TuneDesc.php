@@ -75,6 +75,12 @@ class TuneDesc implements Interfaces\DescTuner
         return $this;
     }
 
+    public function context($something, string $key='default'): self {
+        $this->exception->setContext($something, $key);
+
+        return $this;
+    }
+
     public function wrong(?string $what = null): self
     {
         $this->addWithAfter(__FUNCTION__, $what);
