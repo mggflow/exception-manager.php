@@ -76,273 +76,253 @@ class TuneDesc implements Interfaces\DescTuner
         return $this;
     }
 
-    public function context($something, string $key='default'): self {
+    public function context($something, string $key = 'default'): self
+    {
         $this->exception->setContext($something, $key);
 
         return $this;
     }
 
-    public function wrong(?string $what = null): self
+    public function wrong(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function isWrong(?string $what = null): self
+    public function isWrong(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function areWrong(?string $what = null): self
+    public function areWrong(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function incorrect(?string $what = null): self
+    public function incorrect(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function isIncorrect(?string $what = null): self
+    public function isIncorrect(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function areIncorrect(?string $what = null): self
+    public function areIncorrect(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function invalid(?string $what = null): self
+    public function invalid(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function isInvalid(?string $what = null): self
+    public function isInvalid(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function areInvalid(?string $what = null): self
+    public function areInvalid(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function no(?string $what = null): self
+    public function no(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function not(?string $what = null): self
+    public function not(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function isnt(?string $what = null): self
+    public function isnt(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function arent(?string $what = null): self
+    public function arent(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function dont(?string $what = null): self
+    public function dont(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function doesnt(?string $what = null): self
+    public function doesnt(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function failed(?string $what = null): self
+    public function failed(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function exist(?string $what = null): self
+    public function exist(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function exists(?string $what = null): self
+    public function exists(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function empty(?string $what = null): self
+    public function empty(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function isEmpty(?string $what = null): self
+    public function isEmpty(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function areEmpty(?string $what = null): self
+    public function areEmpty(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function need(?string $what = null): self
+    public function need(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function already(?string $what = null): self
+    public function already(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function enough(?string $what = null): self
+    public function enough(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function ready(): self
+    public function ready(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithout(__FUNCTION__);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function tooMuch(?string $what = null): self
+    public function tooMuch(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function tooMany(?string $what = null): self
+    public function tooMany(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithAfter(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function required(?string $what = null): self
+    public function required(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function denied(?string $what = null): self
+    public function denied(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function rejected(?string $what = null): self
+    public function rejected(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function same(?string $what = null): self
+    public function same(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function areSame(?string $what = null): self
+    public function areSame(?string $whatBefore = null, ?string $whatAfter = null): self
     {
-        $this->addWithBefore(__FUNCTION__, $what);
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    public function found(?string $what =null): self {
-        $this->addWithBefore(__FUNCTION__, $what);
+    public function found(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
         return $this;
     }
 
-    protected function addWithBefore(string $phraseKey, ?string $what)
+    protected function addPart(string $phraseKey, ?string $whatBefore, ?string $whatAfter)
     {
         $this->initMessagePart();
         $this->setPhraseKey($phraseKey);
         $this->findPhraseDesc();
 
-        $this->addPhrasePart($what);
+        $this->addPhrasePart($whatBefore);
         $this->addPhraseBase();
-
-        $this->publishMessagePart();
-    }
-
-    protected function addWithAfter(string $phraseKey, ?string $what)
-    {
-        $this->initMessagePart();
-        $this->setPhraseKey($phraseKey);
-        $this->findPhraseDesc();
-
-        $this->addPhraseBase();
-        $this->addPhrasePart($what);
-
-        $this->publishMessagePart();
-    }
-
-    protected function addWithout(string $phraseKey)
-    {
-        $this->initMessagePart();
-        $this->setPhraseKey($phraseKey);
-        $this->findPhraseDesc();
-
-        $this->addPhraseBase();
+        $this->addPhrasePart($whatAfter);
 
         $this->publishMessagePart();
     }
