@@ -14,7 +14,8 @@ Example:
 try {
     throw ManageException::build()
         ->log()->warning()->b()
-        ->desc()->internal()->tooMany('Requests')->b()
+        ->desc()->internal()->tooMany(null, 'Requests')
+        ->context(uniqid(), 'importantID')->b()
         ->fill();
 } catch (UniException $uniException) {
     echo '<pre>';
@@ -22,6 +23,7 @@ try {
     var_dump($uniException->getMessage());
     var_dump($uniException->getInternalMessage());
     var_dump($uniException->getLogLvl());
+    var_dump($uniException->getContext());
     var_dump($uniException->getMessageParts());
     echo '</pre>';
 }
@@ -33,6 +35,10 @@ int(13)
 string(14) "Internal Error"
 string(17) "Too many Requests"
 int(32)
+array(1) {
+  ["importantID"]=>
+  string(13) "64050ff0be4fa"
+}
 array(1) {
   [0]=>
   array(2) {
