@@ -42,6 +42,7 @@ class TuneDesc implements Interfaces\DescTuner
         'rejected' => [16, 'rejected'],
         'same' => [17, 'the same'],
         'areSame' => [17, 'are the same'],
+        'found' => [18, 'found']
     ];
 
     protected ExceptionBuilder $builder;
@@ -300,6 +301,12 @@ class TuneDesc implements Interfaces\DescTuner
 
     public function areSame(?string $what = null): self
     {
+        $this->addWithBefore(__FUNCTION__, $what);
+
+        return $this;
+    }
+
+    public function found(?string $what =null): self {
         $this->addWithBefore(__FUNCTION__, $what);
 
         return $this;
