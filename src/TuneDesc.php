@@ -42,7 +42,8 @@ class TuneDesc implements Interfaces\DescTuner
         'rejected' => [16, 'rejected'],
         'same' => [17, 'the same'],
         'areSame' => [17, 'are the same'],
-        'found' => [18, 'found']
+        'found' => [18, 'found'],
+        'expired' => [19, 'expired']
     ];
 
     protected ExceptionBuilder $builder;
@@ -308,6 +309,13 @@ class TuneDesc implements Interfaces\DescTuner
     }
 
     public function found(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function expired(?string $whatBefore = null, ?string $whatAfter = null): self
     {
         $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
