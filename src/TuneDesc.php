@@ -43,7 +43,14 @@ class TuneDesc implements Interfaces\DescTuner
         'same' => [17, 'the same'],
         'areSame' => [17, 'are the same'],
         'found' => [18, 'found'],
-        'expired' => [19, 'expired']
+        'expired' => [19, 'expired'],
+        'removal' => [20, 'removal'],
+        'creation' => [21, 'creation'],
+        'update' => [22, 'update'],
+        'search' => [23, 'search'],
+        'reading' => [24, 'reading'],
+        'receiving' => [25, 'receiving'],
+        'transmitting' => [26, 'transmitting']
     ];
 
     protected ExceptionBuilder $builder;
@@ -316,6 +323,55 @@ class TuneDesc implements Interfaces\DescTuner
     }
 
     public function expired(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function removal(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function creation(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function update(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function search(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function reading(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function receiving(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function transmitting(?string $whatBefore = null, ?string $whatAfter = null): self
     {
         $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
 
