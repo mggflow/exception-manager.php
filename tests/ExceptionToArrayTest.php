@@ -20,7 +20,7 @@ class ExceptionToArrayTest extends \PHPUnit\Framework\TestCase
     }
 
     public function testToArrayWithSensitive(){
-        $e = (new BuildException())
+        $e = (new BuildException(new UnexpectedError()))
             ->log()->warning()->b()
             ->desc()->internal()
             ->context(uniqid())->b()->fill();

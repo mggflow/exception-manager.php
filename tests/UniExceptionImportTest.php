@@ -3,13 +3,14 @@
 namespace MGGFLOW\ExceptionManager\Tests;
 
 use MGGFLOW\ExceptionManager\BuildException;
+use MGGFLOW\ExceptionManager\UnexpectedError;
 
 class UniExceptionImportTest extends \PHPUnit\Framework\TestCase
 {
     public function testImport()
     {
         $e = (new \ParseError());
-        $uniE = (new BuildException())->e();
+        $uniE = (new BuildException(new UnexpectedError()))->e();
 
         $uniE->import($e);
 

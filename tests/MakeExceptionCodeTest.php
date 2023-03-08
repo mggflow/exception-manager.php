@@ -3,14 +3,15 @@
 namespace MGGFLOW\ExceptionManager\Tests;
 
 use MGGFLOW\ExceptionManager\BuildException;
+use MGGFLOW\ExceptionManager\UnexpectedError;
 
 class MakeExceptionCodeTest extends \PHPUnit\Framework\TestCase
 {
     public function testMake(){
-        $codes = (new BuildException())->desc()->getCodes();
+        $codes = (new BuildException(new UnexpectedError()))->desc()->getCodes();
         $phraseKeys = array_rand($codes, 3);
 
-        $builder = new BuildException();
+        $builder = new BuildException(new UnexpectedError());
         foreach ($phraseKeys as $phraseKey){
             $builder->desc()->$phraseKey();
         }
