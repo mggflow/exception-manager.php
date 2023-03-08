@@ -18,6 +18,8 @@ abstract class ExceptionBuilder
 
     abstract public function __construct(?UniException $exception);
 
+    abstract public function setUpException(?UniException $exception);
+
     abstract public function log(): LoggingTuner;
 
     abstract public function desc(): DescTuner;

@@ -10,6 +10,10 @@ class BuildException extends ExceptionBuilder
 
     public function __construct(?UniException $exception = null)
     {
+        if(!is_null($exception)) $this->setUpException($exception);
+    }
+
+    public function setUpException(?UniException $exception = null){
         $this->exception = ($exception ?? new UnexpectedError());
 
         $this->descTuner = new TuneDesc($this, $this->exception);

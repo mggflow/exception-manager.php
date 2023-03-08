@@ -9,15 +9,16 @@ class ManageException extends ExceptionManager
 {
     public static function setBuilder(ExceptionBuilder $builder): ManageException
     {
-        self::$builder = $builder;
+        static::$builder = $builder;
 
         return new static();
     }
 
     public static function build(): BuildException
     {
-        if (empty(self::$builder)) self::setBuilder(new BuildException());
+        if (empty(static::$builder)) static::setBuilder(new BuildException());
+        static::$builder->setUpException();
 
-        return self::$builder;
+        return static::$builder;
     }
 }
