@@ -23,4 +23,13 @@ interface UniException extends \Throwable
     public function setContext($something, string $key='default');
 
     public function getContext(): array;
+
+    public function toArray(bool $excludeSensitive): array;
+
+    public function import(\Throwable $e): self;
+
+    public function getImportedTrace(): array;
+
+
+    public function getImportedPrevious(): ?\Throwable;
 }
