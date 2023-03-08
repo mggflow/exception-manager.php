@@ -19,6 +19,8 @@ class ManageException extends ExceptionManager
         if (empty(static::$builder)) static::setBuilder(new BuildException());
         static::$builder->setUpException();
 
+        AccumulateException::accumulate(static::$builder->e());
+
         return static::$builder;
     }
 }
