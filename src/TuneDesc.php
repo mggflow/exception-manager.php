@@ -380,6 +380,20 @@ class TuneDesc implements Interfaces\DescTuner
         return $this;
     }
 
+    public function defined(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
+    public function undefined(?string $whatBefore = null, ?string $whatAfter = null): self
+    {
+        $this->addPart(__FUNCTION__, $whatBefore, $whatAfter);
+
+        return $this;
+    }
+
     protected function addPart(string $phraseKey, ?string $whatBefore, ?string $whatAfter)
     {
         $this->initMessagePart();
