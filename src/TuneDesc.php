@@ -50,7 +50,9 @@ class TuneDesc implements Interfaces\DescTuner
         'search' => [23, 'search'],
         'reading' => [24, 'reading'],
         'receiving' => [25, 'receiving'],
-        'transmitting' => [26, 'transmitting']
+        'transmitting' => [26, 'transmitting'],
+        'defined' => [27, 'defined'],
+        'undefined' => [27, 'undefined']
     ];
 
     protected ExceptionBuilder $builder;
